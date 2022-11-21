@@ -16,6 +16,15 @@ class PlanetsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def ask
+  end
+
   private
 
   def planet_params
