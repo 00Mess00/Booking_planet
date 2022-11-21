@@ -10,8 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_21_151430) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer "departure_date"
+    t.integer "arrival_date"
+    t.string "validate", default: "unvalidate"
+    t.integer "total_price"
+    t.bigint "planet_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["planet_id"], name: "index_bookings_on_planet_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.string "name"
+    t.string "localisation"
+    t.integer "capacity"
+    t.text "description"
+    t.integer "price_per_millenia"
+    t.float "rating"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_planets_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "planets"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "planets", "users"
 end
