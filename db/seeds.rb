@@ -35,8 +35,8 @@ puts "Users created"
 puts 'Creating 6 fake planets...'
 
 neptune = Planet.new(
-  name: neptune,
-  localisation: "x = 10px y = 20px",
+  name: "Neptune",
+  localisation: "x = 10px; y = 20px",
   capacity: 10,
   description: "Neptune est la huitième planète par ordre d'éloignement au Soleil
   et la plus éloignée connue du Système solaire. Elle orbite autour du Soleil à
@@ -49,8 +49,8 @@ neptune = Planet.new(
 neptune.save!
 
 saturne = Planet.new(
-  name: saturne,
-  localisation: "x = 40px y = 80px",
+  name: "Saturne",
+  localisation: "x = 40px; y = 80px",
   capacity: 25,
   description: "Saturne est la sixième planète du Système solaire par ordre
   d'éloignement au Soleil, et la deuxième plus grande par la taille et la masse
@@ -63,8 +63,8 @@ saturne = Planet.new(
 saturne.save!
 
 jupiter = Planet.new(
-  name: jupiter,
-  localisation: "x = 60px y = 120px",
+  name: "Jupiter",
+  localisation: "x = 60px; y = 120px",
   capacity: 45,
   description: "Jupiter est la cinquième planète du Système solaire par ordre
   d'éloignement au Soleil, et la plus grande par la taille et la masse devant
@@ -76,8 +76,8 @@ jupiter = Planet.new(
 jupiter.save!
 
 mars = Planet.new(
-  name: mars,
-  localisation: "x = 100px y = 80px",
+  name: "Mars",
+  localisation: "x = 100px; y = 80px",
   capacity: 25,
   description: "Mars est la quatrième planète du Système solaire par ordre
   croissant de la distance au Soleil et la deuxième par ordre croissant de la
@@ -90,8 +90,8 @@ mars = Planet.new(
 mars.save!
 
 pluton = Planet.new(
-  name: pluton,
-  localisation: "x = 60px y = 120px",
+  name: "Pluton",
+  localisation: "x = 60px; y = 120px",
   capacity: 5,
   description: "Pluton, officiellement désignée par Pluton, est une planète
   naine, la plus volumineuse connue dans le Système solaire, et la deuxième
@@ -104,13 +104,14 @@ pluton = Planet.new(
 pluton.save!
 
 mercure = Planet.new(
-  name: mercure,
-  localisation: "x = 160px y = 120px",
+  name: "Mercure",
+  localisation: "x = 160px; y = 120px",
   capacity: 5,
-  description: "Le mercure est l'élément chimique de numéro atomique 80, de
-  symbole Hg. Le corps simple mercure est un métal, liquide et peu visqueux
-  dans les conditions normales de température et de pression. On l'a appelé
-  vif-argent jusqu'au début du XIXᵉ siècle. ",
+  description: "Mercure est l'une des quatre planètes telluriques du Système
+  solaire, et possède un corps rocheux comme la Terre. C'est également la plus
+  petite, avec un rayon équatorial de 2 439,7 km. Mercure est également plus
+  petite — bien que plus massive — que deux satellites naturels du Système
+  solaire, Ganymède et Titan.",
   price_per_millenia: 35,
   rating: 3.5,
   owner: quentin
