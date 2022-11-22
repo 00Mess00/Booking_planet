@@ -3,10 +3,23 @@
   <div class="landing-bookingplanet container">
     <h1 class="landing-title booking">Book...</h1>
     <h1 class="landing-title aplanet">...a planet</h1>
+    <div class="button-search">
+      <%= link_to "Explore",  planets_path , class: "btn btn-primary btn-home mx-auto rounded" %>
+    </div>
   </div>
   <div class="container">
     <h2 class="trending-title">Trending planets :</h2>
     <div class="row" >
+      <div class="card-trip col-sm">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Title here</h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+        </div>
+      </div>
       <div class="card-trip col-sm">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-trip-infos">
