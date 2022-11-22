@@ -11,33 +11,37 @@ require 'faker'
 
 puts "Cleaning up database..."
 Booking.destroy_all
+Planet.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
 puts 'Creating 3 users...'
-gaetan = User.create!(
+gaetan = User.new(
   email: "gaetan@example.com",
   password: "password",
   name: "Gaetan Renault"
 )
 file = URI.open("https://res.cloudinary.com/dbxzydbfe/image/upload/v1669129984/BB13CBED-3EC2-49A4-B6B5-3D185549A390_x7rmdr.jpg")
 gaetan.photo.attach(io: file, filename: "Gaetan.jpg", content_type: "image/jpg")
+gaetan.save!
 
-quentin = User.create!(
+quentin = User.new(
   email: "quentin@example.com",
   password: "password",
   name: "Quentin Orhant"
 )
 file = URI.open("https://res.cloudinary.com/dbxzydbfe/image/upload/v1669129722/avatar_sakuoe.jpg")
 quentin.photo.attach(io: file, filename: "Quentin.jpg", content_type: "image/jpg")
+quentin.save!
 
-guillaume = User.create!(
+guillaume = User.new(
   email: "guillaume@example.com",
   password: "password",
   name: "Guillaume Messieux"
 )
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665432330/jjmpgh36k9njifsmq2ak.jpg")
 guillaume.photo.attach(io: file, filename: "Guillaume.jpg", content_type: "image/jpg")
+guillaume.save!
 
 puts "Users created"
 
