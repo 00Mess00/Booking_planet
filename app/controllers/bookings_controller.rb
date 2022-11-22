@@ -16,5 +16,6 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @bookings.delete
   end
 end
