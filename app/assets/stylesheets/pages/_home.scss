@@ -9,7 +9,7 @@
 
 .landing-bookingplanet{
   position: relative;
-  height: 1000px;
+  height: calc(100vh + 40px);
 }
 
 .landing-title {
@@ -25,9 +25,29 @@
 
 .aplanet {
   position: absolute;
-  bottom: 400px; right: 0px;
+  bottom: 350px; right: 0px;
 }
 
 .trending-title {
   margin-bottom: 20px;
+}
+
+.button-search {
+  padding: 15px;
+  width: 100px;
+  margin-bottom: 30px;
+  margin-left: -50px ;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+}
+
+.btn-home {
+  font-size: 20px;
+  font-weight: bold;
+  color: $light-gray;
+}
+
+.btn-home:hover {
+  color: $light-gray;
 }
