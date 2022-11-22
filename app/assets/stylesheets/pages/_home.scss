@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+.landing-picture {
+  height: 1413px;
+  object-fit: cover;
+  background-image: asset-url("Planet-booking.png");
+  background-position-x: center;
+
+}
+
+.landing-bookingplanet{
+  position: relative;
+  height: 1000px;
+}
+
+.landing-title {
+  font: $headers-font;
+  font-size: 80px;
+  color: $light-gray;
+}
+
+.booking {
+  position: absolute;
+  top: 80px;
+}
+
+.aplanet {
+  position: absolute;
+  bottom: 400px; right: 0px;
+}
+
+.trending-title {
+  margin-bottom: 20px;
+}
