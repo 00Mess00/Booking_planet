@@ -7,6 +7,10 @@ class PlanetsController < ApplicationController
     @planet = Planet.find(params[:id])
   end
 
+  def new
+    @planet = Planet.new
+  end
+
   def create
     @planet = Planet.new(planet_params)
     if @planet.save
