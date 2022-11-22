@@ -16,8 +16,12 @@
   --bs-navbar-brand-color: $light-gray;
 }
 
-.navbar-nav {
-  -bs-nav-link-hover-color: $light-gray;
+.navbar {
+  --bs-navbar-hover-color: $light-gray;
+  --bs-nav-link-hover-color: $light-gray;
+  --bs-navbar-active-color: $light-gray;
+  --bs-navbar-brand-color: $light-gray;
+  --bs-navbar-brand-hover-color: $light-gray;
 }
 
 .navbar-brand:hover {
