@@ -20,22 +20,31 @@ gaetan = User.create!(
   password: "password",
   name: "Gaetan Renault"
 )
+file = URI.open("https://res.cloudinary.com/dbxzydbfe/image/upload/v1669129984/BB13CBED-3EC2-49A4-B6B5-3D185549A390_x7rmdr.jpg")
+gaetan.photo.attach(io: file, filename: "Gaetan.jpg", content_type: "image/jpg")
+
 quentin = User.create!(
   email: "quentin@example.com",
   password: "password",
   name: "Quentin Orhant"
 )
+file = URI.open("https://res.cloudinary.com/dbxzydbfe/image/upload/v1669129722/avatar_sakuoe.jpg")
+quentin.photo.attach(io: file, filename: "Quentin.jpg", content_type: "image/jpg")
+
 guillaume = User.create!(
   email: "guillaume@example.com",
   password: "password",
   name: "Guillaume Messieux"
 )
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665432330/jjmpgh36k9njifsmq2ak.jpg")
+guillaume.photo.attach(io: file, filename: "Guillaume.jpg", content_type: "image/jpg")
+
 puts "Users created"
 
 puts 'Creating 6 fake planets...'
 
 neptune = Planet.new(
-  name: neptune,
+  name: "Neptune",
   localisation: "x = 10px y = 20px",
   capacity: 10,
   description: "Neptune est la huitième planète par ordre d'éloignement au Soleil
@@ -46,10 +55,12 @@ neptune = Planet.new(
   rating: 5,
   owner: guillaume
 )
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/0/06/Neptune.jpg?20210312074035")
+neptune.photo.attach(io: file, filename: "neptune.jpg", content_type: "image/jpg")
 neptune.save!
 
 saturne = Planet.new(
-  name: saturne,
+  name: "Saturne",
   localisation: "x = 40px y = 80px",
   capacity: 25,
   description: "Saturne est la sixième planète du Système solaire par ordre
@@ -60,10 +71,12 @@ saturne = Planet.new(
   owner: guillaume
 )
 # saturne.image.attach(file: ...)
+file = URI.open("https://starwalk.space/gallery/images/saturn-planet-guide/1920x1080.jpg")
+saturne.photo.attach(io: file, filename: "Saturne.jpg", content_type: "image/jpg")
 saturne.save!
 
 jupiter = Planet.new(
-  name: jupiter,
+  name: "Jupiter",
   localisation: "x = 60px y = 120px",
   capacity: 45,
   description: "Jupiter est la cinquième planète du Système solaire par ordre
@@ -73,10 +86,12 @@ jupiter = Planet.new(
   rating: 3.5,
   owner: guillaume
 )
+file = URI.open("https://medias.pourlascience.fr/api/v1/images/view/5fd7a3828fe56f1f5c4e1b86/wide_1300/image.jpg")
+jupiter.photo.attach(io: file, filename: "Jupiter.jpg", content_type: "image/jpg")
 jupiter.save!
 
 mars = Planet.new(
-  name: mars,
+  name: "Mars",
   localisation: "x = 100px y = 80px",
   capacity: 25,
   description: "Mars est la quatrième planète du Système solaire par ordre
@@ -87,10 +102,12 @@ mars = Planet.new(
   rating: 4.5,
   owner: guillaume
 )
+file = URI.open("https://img-4.linternaute.com/6pObiE0kS-OFeUE4mrwXcwef6Tc=/1500x/smart/bccec01912df412a8d81e5ca17a42b02/ccmcms-linternaute/34274637.jpg")
+mars.photo.attach(io: file, filename: "smars.jpg", content_type: "image/jpg")
 mars.save!
 
 pluton = Planet.new(
-  name: pluton,
+  name: "Pluton",
   localisation: "x = 60px y = 120px",
   capacity: 5,
   description: "Pluton, officiellement désignée par Pluton, est une planète
@@ -101,10 +118,12 @@ pluton = Planet.new(
   rating: 3.5,
   owner: quentin
 )
+file = URI.open("https://www.observatoiredeparis.psl.eu/IMG/jpg/pluton2015.jpg")
+pluton.photo.attach(io: file, filename: "Pluton.jpg", content_type: "image/jpg")
 pluton.save!
 
 mercure = Planet.new(
-  name: mercure,
+  name: "Mercure",
   localisation: "x = 160px y = 120px",
   capacity: 5,
   description: "Le mercure est l'élément chimique de numéro atomique 80, de
@@ -115,6 +134,8 @@ mercure = Planet.new(
   rating: 3.5,
   owner: quentin
 )
+file = URI.open("http://www.tiens-lunivers.fr/img/mercure-planete.jpg")
+mercure.photo.attach(io: file, filename: "Mercure.jpg", content_type: "image/jpg")
 mercure.save!
 puts 'Planets created'
 
