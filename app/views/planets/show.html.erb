@@ -1,5 +1,7 @@
 <div class="container">
   <h1><%= @planet.name %></h1>
+  <%= cl_image_tag @planet.photo.key, height: 300, width: 400, crop: :fill %>
+
   <ul>
       <li>Localisation: <%= @planet.localisation %></li>
       <li>Capacity: <%= @planet.capacity %></li>
