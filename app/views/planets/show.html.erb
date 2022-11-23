@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container card-trip">
   <h1><%= @planet.name %></h1>
-  <%= cl_image_tag @planet.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @planet.photo.key, height: 200, width: 400, crop: :fill %>
 
   <ul>
       <li>Localisation: <%= @planet.localisation %></li>
