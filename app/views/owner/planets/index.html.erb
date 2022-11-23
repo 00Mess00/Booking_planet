@@ -10,7 +10,7 @@
       <div class="col-3 d-flex justify-content-center">
         <div class="card-trip">
         <%= link_to planet_path(planet) do %>
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg",  />
+          <%= cl_image_tag planet.photo.key, height: 300, width: 400, crop: :fill %>
          <% end %>
           <div class="card-trip-infos">
             <div>
