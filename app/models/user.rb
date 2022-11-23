@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :planets, dependent: :destroy
   has_many :bookings, dependent: :nullify
   has_many :owner_bookings, through: :planets, source: :bookings
-
+  has_one_attached :photo
 end
