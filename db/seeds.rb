@@ -151,8 +151,8 @@ booking_1 = Booking.new(
   arrival_date: 3023,
   status: "pending",
   total_price: 20,
-  user: gaetan,
-  planet: neptune
+  user: guillaume,
+  planet: pluton
 )
 booking_1.save!
 
