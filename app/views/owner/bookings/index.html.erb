@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>All my bookings (as owner)</h2>
+  <%#= simple_form_for @planet, url: planets_path do |f| %>
+    <%#= f.error_notification %>
+    <%#= f.input :name %>
+    <%#= f.button :submit, class: "btn-primary" %>
+  <%# end %>
+  <div class="row">
+    <% @bookings.each do |booking|%>
+      <div class="justify-content-center">
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos d-flex align-items-center justify-content-between">
+            <div>
+              <h2><%= booking.planet.name %></h2>
+              <p>Arrival date: <%= booking.arrival_date %></p>
+              <p>Departure date: <%= booking.departure_date %></p>
+              <p>Total price: <%= booking.total_price %><%= image_tag "ico.png" %>
+            </div>
+            <div>
+              <% if booking.status=="declined" %>
+                <p class="btn btn-primary">Status : <%= booking.status %></p>
+              <% end %>
+              <% if booking.status=="pending" %>
+                <p class="btn btn-secondary">Status : <%= booking.status %></p>
+              <% end %>
+              <% if booking.status=="accepted" %>
+                <p class="btn btn-success">Status : <%= booking.status %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
