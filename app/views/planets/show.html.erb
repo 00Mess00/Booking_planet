@@ -1,10 +1,12 @@
-<h1><%= @planet.name %></h1>
-<ul>
-    <li>Localisation: <%= @planet.localisation %></li>
-    <li>Capacity: <%= @planet.capacity %></li>
-    <li>Description: <%= @planet.description %></li>
-    <li>Price: <%= @planet.price_per_millenia %> Dataries</li>
-    <li>Rating: <%= @planet.rating %></li>
-</ul>
-<%=link_to("Back to the list of planets", planets_path)%>
-<%=link_to("Edit this planet", edit_planet_path, class:'btn')%>
+<div class="container">
+  <h1><%= @planet.name %></h1>
+  <ul>
+      <li>Localisation: <%= @planet.localisation %></li>
+      <li>Capacity: <%= @planet.capacity %></li>
+      <li>Description: <%= @planet.description %></li>
+      <li>Price: <%= @planet.price_per_millenia %> Dataries</li>
+      <li>Rating: <%= @planet.rating %></li>
+  </ul>
+  <%=link_to("Back to the list of planets", planets_path)%>
+  <%=link_to("Edit this planet", edit_planet_path, class:'btn')%>
+</div>
