@@ -6,8 +6,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    if @booking.save
-      redirect_to booking_path(@booking)
+    @booking.planet = Planet.find(params[:planet_id])
+    @booking.user = current_user
+    @booking.total_price = (@booking.departure_date - @booking.arrival_date) * @booking.planet.price_per_millenia
+    if @booking.save!
+      redirect_to bookings_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,5 +21,11 @@ class BookingsController < ApplicationController
 
   def destroy
     @bookings.delete
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:arrival_date, :departure_date)
   end
 end
