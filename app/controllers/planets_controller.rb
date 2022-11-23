@@ -13,6 +13,7 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
+    @planet.owner = current_user
     if @planet.save
       redirect_to planet_path(@planet)
     else
