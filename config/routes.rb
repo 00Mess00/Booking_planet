@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :destroy]
   namespace :owner do
+    resources :planets, only: [:index]
     resources :bookings, only: [:index] do
       member do
         patch :accept
