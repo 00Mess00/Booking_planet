@@ -14,7 +14,10 @@
             <%= link_to "Create a planet", new_planet_path, class: "btn btn-primary nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My bookings", "#", class: "nav-link" %>
+            <%= link_to "My bookings as user", bookings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My bookings as owner", owner_bookings_path, class: "nav-link" %>
           </li>
           <% if current_user.planets.any? %>
             <li class="nav-item">
