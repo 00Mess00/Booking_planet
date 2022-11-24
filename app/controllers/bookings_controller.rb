@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
     # @bookings = Booking.all
-    @bookings = current_user.bookings
+    @bookings = current_user.bookings.order(updated_at: :desc)
   end
 
   def create
