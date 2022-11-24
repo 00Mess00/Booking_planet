@@ -2,9 +2,10 @@
   <div class="landing-bookingplanet container">
     <h1 class="landing-title booking">Book...</h1>
     <h1 class="landing-title aplanet">...a planet</h1>
-      <div class="button-search">
-       <%= link_to "Explore",  planets_path , class: "btn btn-primary btn-home mx-auto rounded" %>
-      </div>
+    <div class="button-search">
+      <%= link_to "Explore the univers !",  planets_path , class: "btn btn-primary btn-home mx-auto rounded" %>
+      <%= image_tag "arrow.png", height: '24', width: '80' %>
+    </div>
   </div>
   <div class="container">
     <h2 class="trending-title">Trending planets :</h2>
@@ -19,7 +20,7 @@
                   <div>
                     <h2><%= planet.name %></h2>
                   </div>
-              <h2 class="card-trip-pricing"><%= planet.price_per_millenia %><%= image_tag "ico.png" %></h2>
+                  <h2 class="card-trip-pricing"><%= planet.price_per_millenia %><%= image_tag "ico.png" %></h2>
                 </div>
             </div>
           </div>
