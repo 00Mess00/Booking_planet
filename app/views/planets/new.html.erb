@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-sm d-flex justify-content-center">
       <div class="rounded p-3 shadow">
-        <h3>Create a new planet</h3>
+        <h3>Create your planet</h3>
         <%= simple_form_for @planet do |f| %>
           <%= f.input :name %>
-          <%= f.input :localisation %>
-          <%= f.input :capacity %>
+          <%= f.input :localisation, label: "Location" %>
+          <%= f.input :capacity, label: "Capacity in billion" %>
           <%= f.input :description %>
-          <%= f.input :price_per_millenia %>
-          <%= f.input :photo, as: :file %>
+          <%= f.input :price_per_millenia, label: "Price per millenium" %>
+          <%= f.input :photo, as: :file, label: "Picture", defaults: "test" %>
 
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.submit "Creat !",class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>

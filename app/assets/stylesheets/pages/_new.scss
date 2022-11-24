@@ -3,6 +3,17 @@
   border-width: 1px;
 }
 
-// {
-//   color: black;
-// }
+.form-control::file-selector-button  {
+  background: rgb(24, 24, 36);
+  color: rgb(250, 247, 247);
+  padding: 1em;
+}
+
+.form-control:hover::file-selector-button  {
+  color: rgb(24, 24, 36);
+  padding: 1em;
+}
+
+.btn-primary {
+  color: white
+}
