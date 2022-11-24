@@ -10,6 +10,11 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-top: 6px;
+}
+
+.navbar-lewagon .navbar-brand h1{
+  margin-top: 9px;
 }
 
 .navbar-brand {
@@ -17,6 +22,9 @@
 }
 
 .navbar {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
   --bs-navbar-hover-color: $light-gray;
   --bs-nav-link-hover-color: $light-gray;
   --bs-navbar-active-color: $light-gray;
@@ -32,7 +40,6 @@
   height: 100%;
   width: 100% ;
   vertical-align: middle;
-  // margin-top: 3px;
   margin-right: 10px;
 }
 
@@ -41,10 +48,31 @@
   font-size: 20px ;
 }
 
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  background-color: #202030;
+  right: 110px;
+}
+
 .nav-link {
   color: $light-gray;
+  text-align: right;
 }
 
 .nav-link:hover {
-  color: $light-gray;
+  color: #FF0E5D !important;
+  text-align: right;
+}
+
+.nav-btn {
+  margin-right: 10px !important;
+  height: 40px;
+}
+
+.nav-btn:hover {
+  color: white;
+  font-weight: bold;
+}
+
+.avatar {
+  margin-bottom: 8px;
 }
