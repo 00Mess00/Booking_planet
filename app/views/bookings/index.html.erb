@@ -1,31 +1,33 @@
-<div class="container">
-  <h2>All my bookings (as user)</h2>
-  <div class="row">
-    <% @bookings.each do |booking|%>
-      <div class="justify-content-center p-3">
-        <div class="card-product">
-          <%= cl_image_tag booking.planet.photo.key%>
-          <div class="card-product-infos d-flex align-items-center justify-content-between">
-            <div>
-              <h2><%= booking.planet.name %></h2>
-              <p>Arrival date: <%= booking.arrival_date %></p>
-              <p>Departure date: <%= booking.departure_date %></p>
-              <p>Total price: <%= booking.total_price %><%= image_tag "ico.png" %>
-            </div>
-            <div>
-              <% if booking.status=="declined" %>
-                <p class="btn btn-primary">Status : <%= booking.status %></p>
-              <% end %>
-              <% if booking.status=="pending" %>
-                <p class="btn btn-secondary">Status : <%= booking.status %></p>
-              <% end %>
-              <% if booking.status=="accepted" %>
-                <p class="btn btn-success">Status : <%= booking.status %></p>
-              <% end %>
+<div class="background-img">
+  <div class="container">
+    <h2>All my bookings (as user)</h2>
+    <div class="row">
+      <% @bookings.each do |booking|%>
+        <div class="justify-content-center p-3">
+          <div class="card-product">
+            <%= cl_image_tag booking.planet.photo.key%>
+            <div class="card-product-infos d-flex align-items-center justify-content-between">
+              <div>
+                <h2><%= booking.planet.name %></h2>
+                <p>Arrival date: <%= booking.arrival_date %></p>
+                <p>Departure date: <%= booking.departure_date %></p>
+                <p>Total price: <%= booking.total_price %><%= image_tag "ico.png" %>
+              </div>
+              <div>
+                <% if booking.status=="declined" %>
+                  <p class="btn btn-primary">Status : <%= booking.status %></p>
+                <% end %>
+                <% if booking.status=="pending" %>
+                  <p class="btn btn-secondary">Status : <%= booking.status %></p>
+                <% end %>
+                <% if booking.status=="accepted" %>
+                  <p class="btn btn-success">Status : <%= booking.status %></p>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <%end%>
+      <%end%>
+    </div>
   </div>
 </div>
