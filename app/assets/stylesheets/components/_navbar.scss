@@ -10,6 +10,11 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-top: 6px;
+}
+
+.navbar-lewagon .navbar-brand h1{
+  margin-top: 9px;
 }
 
 .navbar-brand {
@@ -41,10 +46,26 @@
   font-size: 20px ;
 }
 
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  background-color: #202030;
+  right: 110px;
+}
+
 .nav-link {
   color: $light-gray;
+  text-align: right;
 }
 
 .nav-link:hover {
-  color: $light-gray;
+  color: #FF0E5D !important;
+  text-align: right;
+}
+
+.nav-btn {
+  margin-right: 10px !important;
+}
+
+.nav-btn:hover {
+  color: white;
+  font-weight: bold;
 }
