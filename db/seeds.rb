@@ -48,7 +48,7 @@ puts 'Creating 6 fake planets...'
 
 neptune = Planet.new(
   name: "Neptune",
-  localisation: "x = 10px; y = 20px",
+  address: "97387 Route de l'Espace, Kourou 97310",
   capacity: 10,
   description: "Neptune est la huitième planète par ordre d'éloignement au Soleil
   et la plus éloignée connue du Système solaire. Elle orbite autour du Soleil à
@@ -64,7 +64,7 @@ neptune.save!
 
 saturne = Planet.new(
   name: "Saturne",
-  localisation: "x = 40px; y = 80px",
+  address: "Cape Canaveral Space Force Station, Cape Canaveral, FL 32920, États-Unis",
   capacity: 25,
   description: "Saturne est la sixième planète du Système solaire par ordre
   d'éloignement au Soleil, et la deuxième plus grande par la taille et la masse
@@ -80,7 +80,7 @@ saturne.save!
 
 jupiter = Planet.new(
   name: "Jupiter",
-  localisation: "x = 60px; y = 120px",
+  address: "Nairobi Central, Nairobi, Kenya",
   capacity: 45,
   description: "Jupiter est la cinquième planète du Système solaire par ordre
   d'éloignement au Soleil, et la plus grande par la taille et la masse devant
@@ -95,7 +95,7 @@ jupiter.save!
 
 mars = Planet.new(
   name: "Mars",
-  localisation: "x = 100px; y = 80px",
+  address: "x = 100px; y = 80px",
   capacity: 25,
   description: "Mars est la quatrième planète du Système solaire par ordre
   croissant de la distance au Soleil et la deuxième par ordre croissant de la
@@ -111,7 +111,7 @@ mars.save!
 
 pluton = Planet.new(
   name: "Pluton",
-  localisation: "x = 60px; y = 120px",
+  address: "x = 60px; y = 120px",
   capacity: 5,
   description: "Pluton, officiellement désignée par Pluton, est une planète
   naine, la plus volumineuse connue dans le Système solaire, et la deuxième
@@ -127,7 +127,7 @@ pluton.save!
 
 mercure = Planet.new(
   name: "Mercure",
-  localisation: "x = 160px; y = 120px",
+  address: "x = 160px; y = 120px",
   capacity: 5,
   description: "Mercure est l'une des quatre planètes telluriques du Système
   solaire, et possède un corps rocheux comme la Terre. C'est également la plus

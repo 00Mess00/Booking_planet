@@ -1,10 +1,6 @@
 class PlanetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def index
-    @planets = Planet.all
-  end
-
   def show
     @planet = Planet.find(params[:id])
     @booking = Booking.new
@@ -24,6 +20,17 @@ class PlanetsController < ApplicationController
     end
   end
 
+  def index
+    @planets = Planet.all
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @planets.geocoded.map do |planet|
+      {
+        lat: planet.latitude,
+        lng: planet.longitude
+      }
+    end
+  end
+
   def edit
   end
 
@@ -36,6 +43,6 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(:name, :localisation, :capacity, :description, :price_per_millenia, :photo)
+    params.require(:planet).permit(:name, :address, :capacity, :description, :price_per_millenia, :photo)
   end
 end
