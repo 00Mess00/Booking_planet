@@ -12,6 +12,8 @@
   height: calc(100vh + 40px);
 }
 
+
+
 .landing-title {
   font: $headers-font;
   font-size: 80px;
@@ -20,12 +22,12 @@
 
 .booking {
   position: absolute;
-  top: 80px;
+  top: 50px; left: 100px;
 }
 
 .aplanet {
   position: absolute;
-  bottom: 350px; right: 0px;
+  top: 480px; right: 100px;
 }
 
 .trending-title {
@@ -33,21 +35,35 @@
 }
 
 .button-search {
-  padding: 15px;
-  width: 100px;
-  margin-bottom: 30px;
-  margin-left: -50px ;
   position: absolute;
-  bottom: 100px;
-  left: 50%;
+  bottom: 120px;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-search img {
+  margin-top: 150px;
+  animation: bounce2 2s ease infinite;
 }
 
 .btn-home {
-  font-size: 20px;
+  font-size: 25px;
+  width: 300px;
   font-weight: bold;
   color: $light-gray;
+  margin: auto 0;
+
 }
 
 .btn-home:hover {
   color: $light-gray;
+}
+
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-15px);}
+	60% {transform: translateY(-7px);}
 }
