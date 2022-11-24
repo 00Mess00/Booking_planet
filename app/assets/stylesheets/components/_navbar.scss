@@ -22,6 +22,9 @@
 }
 
 .navbar {
+  position: sticky;
+  top: 0px;
+  z-index: 10;
   --bs-navbar-hover-color: $light-gray;
   --bs-nav-link-hover-color: $light-gray;
   --bs-navbar-active-color: $light-gray;
@@ -37,7 +40,6 @@
   height: 100%;
   width: 100% ;
   vertical-align: middle;
-  // margin-top: 3px;
   margin-right: 10px;
 }
 
@@ -63,9 +65,14 @@
 
 .nav-btn {
   margin-right: 10px !important;
+  height: 40px;
 }
 
 .nav-btn:hover {
   color: white;
   font-weight: bold;
+}
+
+.avatar {
+  margin-bottom: 8px;
 }
