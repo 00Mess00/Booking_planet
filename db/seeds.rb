@@ -38,6 +38,13 @@ guillaume = User.new(
   password: "password",
   name: "Guillaume Messieux"
 )
+
+dionysos = User.new(
+  email: "dionysos@example.com",
+  password: "password",
+  name: "Dionysos"
+)
+
 file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665432330/jjmpgh36k9njifsmq2ak.jpg")
 guillaume.photo.attach(io: file, filename: "Guillaume.jpg", content_type: "image/jpg")
 guillaume.save!
@@ -95,7 +102,7 @@ jupiter.save!
 
 mars = Planet.new(
   name: "Mars",
-  address: "x = 100px; y = 80px",
+  address: "Chine, Inner Mongolia, Alxa League, Ejin Banner, 735412",
   capacity: 25,
   description: "Mars est la quatrième planète du Système solaire par ordre
   croissant de la distance au Soleil et la deuxième par ordre croissant de la
@@ -103,7 +110,7 @@ mars = Planet.new(
   1,666 UA, avec une période orbitale de 669,58 jours martiens.",
   price_per_millenia: 25,
   rating: 4.5,
-  owner: guillaume
+  owner: dionysos
 )
 file = URI.open("https://img-4.linternaute.com/6pObiE0kS-OFeUE4mrwXcwef6Tc=/1500x/smart/bccec01912df412a8d81e5ca17a42b02/ccmcms-linternaute/34274637.jpg")
 mars.photo.attach(io: file, filename: "smars.jpg", content_type: "image/jpg")
@@ -111,7 +118,7 @@ mars.save!
 
 pluton = Planet.new(
   name: "Pluton",
-  address: "x = 60px; y = 120px",
+  address: "Sriharikota, Andhra Pradesh 524124, Inde",
   capacity: 5,
   description: "Pluton, officiellement désignée par Pluton, est une planète
   naine, la plus volumineuse connue dans le Système solaire, et la deuxième
@@ -127,7 +134,7 @@ pluton.save!
 
 mercure = Planet.new(
   name: "Mercure",
-  address: "x = 160px; y = 120px",
+  address: "apon, 〒891-3703 Kagoshima, Kumage District, Minamitane, Kukinaga, 9999-7 ",
   capacity: 5,
   description: "Mercure est l'une des quatre planètes telluriques du Système
   solaire, et possède un corps rocheux comme la Terre. C'est également la plus
