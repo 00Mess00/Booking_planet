@@ -20,11 +20,11 @@
                     <p><%= link_to 'Decline', decline_owner_booking_path(booking), data: { 'turbo-method': :patch } %></p>
                   </div>
                 <% elsif booking.status=="declined" %>
-                  <div class="booking_button_decline">
-                   <i class="fa-solid fa-circle-xmark"></i>
+                  <div class="booking_tag_decline">
+                    <i class="fa-solid fa-circle-xmark"></i>
                   </div>
                 <% elsif booking.status=="accepted" %>
-                  <div class="booking_button_accept">
+                  <div class="booking_tag_accept">
                     <i class="fa-solid fa-circle-check"></i>
                   </div>
                 <% end %>

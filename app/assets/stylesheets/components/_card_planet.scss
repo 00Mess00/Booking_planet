@@ -7,15 +7,21 @@
   width: 20px;
   margin-bottom: 4px;
 }
-.booking_button_accept {
+.booking_tag_accept i{
   font-size: 50px;
   color:aqua;
 }
-.booking_button_decline {
+.booking_tag_decline i{
   font-size: 50px;
   color:red;
 }
-.booking_button_pending {
+.booking_tag_pending i{
   font-size: 50px;
   color:rgb(120, 117, 117);
+}
+.button_accept{
+  color: #f9f6f7;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
 }

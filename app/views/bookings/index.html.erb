@@ -15,13 +15,17 @@
               </div>
               <div>
                 <% if booking.status=="declined" %>
-                  <p class="btn btn-primary">Status : <%= booking.status %></p>
-                <% end %>
-                <% if booking.status=="pending" %>
-                  <p class="btn btn-secondary">Status : <%= booking.status %></p>
-                <% end %>
-                <% if booking.status=="accepted" %>
-                  <p class="btn btn-success">Status : <%= booking.status %></p>
+                  <div class="booking_tag_decline">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                  </div>
+                <% elsif booking.status=="pending" %>
+                  <div class="booking_tag_pending">
+                  <i class="fa-solid fa-clock"></i>
+                  </div>
+                <% elsif booking.status=="accepted" %>
+                  <div class="booking_tag_accept">
+                  <i class="fa-solid fa-circle-check"></i>
+                  </div>
                 <% end %>
               </div>
             </div>
