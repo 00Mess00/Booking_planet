@@ -38,8 +38,12 @@
   margin-bottom: 4px;
 }
 
-.card-product-infos .btn {
-  pointer-events: none;
-  cursor: default;
-  color: white;
+.btn-accepte-decline .btn-danger {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.btn-accepte-decline .btn-success {
+  padding-left: 16px;
+  padding-right: 16px;
 }

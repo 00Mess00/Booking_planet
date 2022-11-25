@@ -17,10 +17,10 @@
                 <%= link_to "My planets", owner_planets_path, class: "nav-link" %>
             <% end %>
             <% if current_user.bookings.any? %>
-                <%= link_to "My bookings as user", bookings_path, class: "nav-link" %>
+                <%= link_to "My bookings", bookings_path, class: "nav-link" %>
             <% end %>
             <% if current_user.owner_bookings.any? %>
-                <%= link_to "My bookings as owner", owner_bookings_path, class: "nav-link" %>
+                <%= link_to "Booked planets", owner_bookings_path, class: "nav-link" %>
             <% end %>
             <%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
           </div>
