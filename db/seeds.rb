@@ -42,13 +42,22 @@ file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_2
 guillaume.photo.attach(io: file, filename: "Guillaume.jpg", content_type: "image/jpg")
 guillaume.save!
 
+dionysos = User.new(
+  email: "dionysos@example.com",
+  password: "password",
+  name: "Dionysos"
+)
+file = URI.open("https://res.cloudinary.com/dbxzydbfe/image/upload/v1669373449/jonathan-cooper-R8L1l9RN198-unsplash_njcxhm.jpg")
+dionysos.photo.attach(io: file, filename: "Dionysos.jpg", content_type: "image/jpg")
+dionysos.save!
+
 puts "Users created"
 
 puts 'Creating 6 fake planets...'
 
 neptune = Planet.new(
   name: "Neptune",
-  localisation: "x = 10px; y = 20px",
+  address: "Route de l'Espace Kourou 97310, Guyane française",
   capacity: 10,
   description: "Neptune est la huitième planète par ordre d'éloignement au Soleil
   et la plus éloignée connue du Système solaire. Elle orbite autour du Soleil à
@@ -64,7 +73,7 @@ neptune.save!
 
 saturne = Planet.new(
   name: "Saturne",
-  localisation: "x = 40px; y = 80px",
+  address: "Cap Canaveral, Floride, États-Unis",
   capacity: 25,
   description: "Saturne est la sixième planète du Système solaire par ordre
   d'éloignement au Soleil, et la deuxième plus grande par la taille et la masse
@@ -80,7 +89,7 @@ saturne.save!
 
 jupiter = Planet.new(
   name: "Jupiter",
-  localisation: "x = 60px; y = 120px",
+  address: "Nairobi Central, Nairobi, Kenya",
   capacity: 45,
   description: "Jupiter est la cinquième planète du Système solaire par ordre
   d'éloignement au Soleil, et la plus grande par la taille et la masse devant
@@ -95,7 +104,7 @@ jupiter.save!
 
 mars = Planet.new(
   name: "Mars",
-  localisation: "x = 100px; y = 80px",
+  address: "Jiuquan, Chine",
   capacity: 25,
   description: "Mars est la quatrième planète du Système solaire par ordre
   croissant de la distance au Soleil et la deuxième par ordre croissant de la
@@ -103,7 +112,7 @@ mars = Planet.new(
   1,666 UA, avec une période orbitale de 669,58 jours martiens.",
   price_per_millenia: 25,
   rating: 4.5,
-  owner: guillaume
+  owner: dionysos
 )
 file = URI.open("https://img-4.linternaute.com/6pObiE0kS-OFeUE4mrwXcwef6Tc=/1500x/smart/bccec01912df412a8d81e5ca17a42b02/ccmcms-linternaute/34274637.jpg")
 mars.photo.attach(io: file, filename: "smars.jpg", content_type: "image/jpg")
@@ -111,7 +120,7 @@ mars.save!
 
 pluton = Planet.new(
   name: "Pluton",
-  localisation: "x = 60px; y = 120px",
+  address: "Sriharikota, Andhra Pradesh 524124, Inde",
   capacity: 5,
   description: "Pluton, officiellement désignée par Pluton, est une planète
   naine, la plus volumineuse connue dans le Système solaire, et la deuxième
@@ -127,7 +136,7 @@ pluton.save!
 
 mercure = Planet.new(
   name: "Mercure",
-  localisation: "x = 160px; y = 120px",
+  address: "Tanegashima, ",
   capacity: 5,
   description: "Mercure est l'une des quatre planètes telluriques du Système
   solaire, et possède un corps rocheux comme la Terre. C'est également la plus
