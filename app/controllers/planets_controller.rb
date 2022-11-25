@@ -22,11 +22,11 @@ class PlanetsController < ApplicationController
 
   def index
     @planets = Planet.all
-    # The `geocoded` scope filters only flats with coordinates
     @markers = @planets.geocoded.map do |planet|
       {
         lat: planet.latitude,
-        lng: planet.longitude
+        lng: planet.longitude,
+        image_url: helpers.asset_url("rocket-solid.svg")
       }
     end
   end
