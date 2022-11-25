@@ -7,15 +7,32 @@
   width: 20px;
   margin-bottom: 4px;
 }
-.booking_button_accept {
-  font-size: 30px;
-  color: $success;
-  margin-right: 30px;
+.booking_tag_accept i{
+  font-size: 50px;
+  color:aqua;
 }
-.booking_button_decline {
-  font-size: 30px;
+.booking_tag_decline i{
+  font-size: 50px;
   color:red;
   margin-right: 30px;
+}
+.booking_tag_pending i{
+  font-size: 50px;
+  color:rgb(120, 117, 117);
+
+
+.total-price {
+  position: absolute;
+  right: 180px;
+  font-size: 40px;
+}
+
+.card-product-infos {
+  position: relative;
+}
+
+.title-planet {
+  margin-bottom: 12px !important;
 }
 
 .total-price {
