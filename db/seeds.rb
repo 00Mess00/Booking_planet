@@ -38,16 +38,18 @@ guillaume = User.new(
   password: "password",
   name: "Guillaume Messieux"
 )
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665432330/jjmpgh36k9njifsmq2ak.jpg")
+guillaume.photo.attach(io: file, filename: "Guillaume.jpg", content_type: "image/jpg")
+guillaume.save!
 
 dionysos = User.new(
   email: "dionysos@example.com",
   password: "password",
   name: "Dionysos"
 )
-
-file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665432330/jjmpgh36k9njifsmq2ak.jpg")
-guillaume.photo.attach(io: file, filename: "Guillaume.jpg", content_type: "image/jpg")
-guillaume.save!
+file = URI.open("https://res.cloudinary.com/dbxzydbfe/image/upload/v1669373449/jonathan-cooper-R8L1l9RN198-unsplash_njcxhm.jpg")
+dionysos.photo.attach(io: file, filename: "Dionysos.jpg", content_type: "image/jpg")
+dionysos.save!
 
 puts "Users created"
 
@@ -55,7 +57,7 @@ puts 'Creating 6 fake planets...'
 
 neptune = Planet.new(
   name: "Neptune",
-  address: "97387 Route de l'Espace, Kourou 97310",
+  address: "Route de l'Espace Kourou 97310, Guyane française",
   capacity: 10,
   description: "Neptune est la huitième planète par ordre d'éloignement au Soleil
   et la plus éloignée connue du Système solaire. Elle orbite autour du Soleil à
@@ -71,7 +73,7 @@ neptune.save!
 
 saturne = Planet.new(
   name: "Saturne",
-  address: "Cape Canaveral Space Force Station, Cape Canaveral, FL 32920, États-Unis",
+  address: "Cap Canaveral, Floride, États-Unis",
   capacity: 25,
   description: "Saturne est la sixième planète du Système solaire par ordre
   d'éloignement au Soleil, et la deuxième plus grande par la taille et la masse
@@ -102,7 +104,7 @@ jupiter.save!
 
 mars = Planet.new(
   name: "Mars",
-  address: "Chine, Inner Mongolia, Alxa League, Ejin Banner, 735412",
+  address: "Jiuquan, Chine",
   capacity: 25,
   description: "Mars est la quatrième planète du Système solaire par ordre
   croissant de la distance au Soleil et la deuxième par ordre croissant de la
@@ -134,7 +136,7 @@ pluton.save!
 
 mercure = Planet.new(
   name: "Mercure",
-  address: "apon, 〒891-3703 Kagoshima, Kumage District, Minamitane, Kukinaga, 9999-7 ",
+  address: "Tanegashima, ",
   capacity: 5,
   description: "Mercure est l'une des quatre planètes telluriques du Système
   solaire, et possède un corps rocheux comme la Terre. C'est également la plus

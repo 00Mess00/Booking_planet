@@ -6,7 +6,7 @@
           <h3 class="text-center">Create your planet</h3>
           <%= simple_form_for @planet do |f| %>
             <%= f.input :name %>
-            <%= f.input :localisation, label: "Location" %>
+            <%= f.input :name, label: "Location" %>
             <%= f.input :capacity, label: "Capacity in billion" %>
             <%= f.input :description %>
             <%= f.input :price_per_millenia, label: "Price per millenium" %>
