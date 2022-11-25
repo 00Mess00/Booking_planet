@@ -1,6 +1,6 @@
 <div class="background-img">
   <div class="container">
-    <h2>All my bookings (as owner)</h2>
+    <h2>Booked planets</h2>
     <div class="row">
       <% @bookings.each do |booking|%>
         <div class="justify-content-center p-3">
@@ -8,16 +8,16 @@
             <%= cl_image_tag booking.planet.photo.key%>
             <div class="card-product-infos d-flex align-items-center justify-content-between">
               <div>
-                <h2><%= booking.planet.name %></h2>
-                <p>Arrival date: <%= booking.arrival_date %></p>
-                <p>Departure date: <%= booking.departure_date %></p>
-                <p>Total price: <%= booking.total_price %><%= image_tag "ico.png" %>
+                <h2 class="title-planet"><%= booking.planet.name %>&nbsp;</h2>
+                <p><i class="fa-solid fa-user mt-2"></i>  Booked by <%= booking.user.name %></p>
+                <p><i class="fa-regular fa-calendar-days mt-2"></i>  From <%= booking.arrival_date.ordinalize %> to <%= booking.departure_date.ordinalize %> millenium</p>
               </div>
+              <h2 class="total-price"><%= booking.total_price %><%= image_tag "ico.png" %></h2>
               <div>
                 <% if booking.status=="pending" %>
-                  <div>
-                    <p><%= link_to 'Accepte', accept_owner_booking_path(booking), data: { 'turbo-method': :patch } %></p>
-                    <p><%= link_to 'Decline', decline_owner_booking_path(booking), data: { 'turbo-method': :patch } %></p>
+                  <div class="btn-accepte-decline">
+                    <p><%= link_to 'Accept', accept_owner_booking_path(booking), data: { 'turbo-method': :patch }, :class => "btn btn-success" %></p>
+                    <p><%= link_to 'Decline', decline_owner_booking_path(booking), data: { 'turbo-method': :patch }, :class => "btn btn-danger" %></p>
                   </div>
                 <% elsif booking.status=="declined" %>
                   <div class="booking_button_decline">
