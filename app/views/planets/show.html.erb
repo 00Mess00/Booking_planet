@@ -1,31 +1,34 @@
-<div class="container center-show">
-  <%= link_to "< Explore",  planets_path , class: "btn-show" %>
-  <div>
-    <div class="title-show">
-      <h1><%= @planet.name %></h1>
-      <h4><%= @planet.capacity %> billion people</h4>
-      <div class="d-flex align-items-center">
-        <h4><%= @planet.price_per_millenia %>&nbsp;<h4>
-        <%= image_tag "ico.png" %>
-        <h4>/millennium</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-8 card-planet d-flex justify-content-center">
-        <div class="planet-img">
-          <%= cl_image_tag @planet.photo.key, height: 300, width: 300, crop: :fill %>
-        </div>
-        <div class="description">
-          <p><%= @planet.description %></p>
+ <div class="background-img">
+  <div class="container center-show">
+    <%= link_to "< Explore",  planets_path , class: "btn-show" %>
+    <div>
+      <div class="title-show">
+        <h1><%= @planet.name %></h1>
+        <h4><%= @planet.capacity %> billion people</h4>
+        <div class="d-flex align-items-center">
+          <h4><%= @planet.price_per_millenia %>&nbsp;<h4>
+          <%= image_tag "ico.png" %>
+          <h4>/millennium</h4>
         </div>
       </div>
-      <div class="col-4 text-center">
-        <h1>Book this planet</h1>
-        <%= simple_form_for [@planet, @booking] do |f| %>
-          <%= f.input :arrival_date, label:"Arrival date in millenia", placeholder:"3" %>
-          <%= f.input :departure_date, label:"Departure date in millenia", placeholder:"4" %>
-          <%= f.submit "Book this planet", class: "btn btn-primary" %>
-        <% end %>
+      <div class="row">
+        <div class="col-8 card-planet d-flex justify-content-center">
+          <div class="planet-owner">
+            <%= cl_image_tag @planet.photo.key, height: 300, width: 300, crop: :fill, class:"planet-img" %>
+            <%= cl_image_tag @planet.owner.photo.key, class:"avatar-show", "data-bs-toggle": "tooltip",  "data-bs-placement": "top", title: @planet.owner.name  %>
+          </div>
+          <div class="description">
+            <p><%= @planet.description %></p>
+          </div>
+        </div>
+        <div class="col-4 text-center">
+          <h1>Book this planet</h1>
+          <%= simple_form_for [@planet, @booking] do |f| %>
+            <%= f.input :arrival_date, label:"Arrival date in millenia", placeholder:"3" %>
+            <%= f.input :departure_date, label:"Departure date in millenia", placeholder:"4" %>
+            <%= f.submit "Book this planet", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

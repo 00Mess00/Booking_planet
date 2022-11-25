@@ -14,14 +14,19 @@
                 <p>Total price: <%= booking.total_price %><%= image_tag "ico.png" %>
               </div>
               <div>
-                <% if booking.status=="declined" %>
-                  <p class="btn btn-primary">Status : <%= booking.status %></p>
-                <% end %>
                 <% if booking.status=="pending" %>
-                  <p class="btn btn-secondary">Status : <%= booking.status %></p>
-                <% end %>
-                <% if booking.status=="accepted" %>
-                  <p class="btn btn-success">Status : <%= booking.status %></p>
+                  <div>
+                    <p><%= link_to 'Accepte', accept_owner_booking_path(booking), data: { 'turbo-method': :patch } %></p>
+                    <p><%= link_to 'Decline', decline_owner_booking_path(booking), data: { 'turbo-method': :patch } %></p>
+                  </div>
+                <% elsif booking.status=="declined" %>
+                  <div class="booking_button_decline">
+                   <i class="fa-solid fa-circle-xmark"></i>
+                  </div>
+                <% elsif booking.status=="accepted" %>
+                  <div class="booking_button_accept">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </div>
                 <% end %>
               </div>
             </div>

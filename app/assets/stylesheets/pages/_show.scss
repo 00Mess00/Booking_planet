@@ -44,6 +44,20 @@ ul {
   color: $primary;
 }
 
-.planet-img img {
+.planet-owner {
+  position: relative;
+}
+
+.planet-img {
   border-radius: 5px;
+}
+
+.avatar-show {
+  border-radius: 25px;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  position: absolute;
+  top: -25px;
+  right: -25px;
 }

@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container container-fluid">
+  <div class="container container-fluid position-relative">
     <%= link_to root_path, class: "navbar-brand d-flex flex-row" do %>
       <%= image_tag "logo.png" %>
       <h1>Planetarium.io</h1>
@@ -10,26 +10,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Create a planet", new_planet_path, class: "btn btn-primary nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "My bookings as user", bookings_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "My bookings as owner", owner_bookings_path, class: "nav-link" %>
-          </li>
-          <% if current_user.planets.any? %>
-            <li class="nav-item">
-              <%= link_to "My planets", owner_planets_path, class: "nav-link" %>
-            </li>
-          <% end %>
-          <li>
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
+          <%= link_to "Create a planet", new_planet_path, class: "btn btn-primary nav-btn" %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <% if current_user.planets.any? %>
+                <%= link_to "My planets", owner_planets_path, class: "nav-link" %>
+            <% end %>
+            <% if current_user.bookings.any? %>
+                <%= link_to "My bookings as user", bookings_path, class: "nav-link" %>
+            <% end %>
+            <% if current_user.owner_bookings.any? %>
+                <%= link_to "My bookings as owner", owner_bookings_path, class: "nav-link" %>
+            <% end %>
+            <%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
+          </div>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
