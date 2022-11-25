@@ -59,6 +59,10 @@
   text-align: right;
 }
 
+.login-link {
+  margin-bottom: 7px;
+}
+
 .nav-link:hover {
   color: #FF0E5D !important;
   text-align: right;
@@ -76,4 +80,8 @@
 
 .avatar {
   margin-bottom: 8px;
+  width: 40px;
+  object-fit: cover;
+  height: 40px;
+  border-radius: 50%;
 }

@@ -1,7 +1,7 @@
  <div class="background-img">
   <div class="container center-show">
     <%= link_to "< Explore",  planets_path , class: "btn-show" %>
-    <div>
+    <div class="w-100">
       <div class="title-show">
         <h1><%= @planet.name %></h1>
         <h4><%= @planet.capacity %> billion people</h4>
@@ -17,18 +17,20 @@
             <%= cl_image_tag @planet.photo.key, height: 300, width: 300, crop: :fill, class:"planet-img" %>
             <%= cl_image_tag @planet.owner.photo.key, class:"avatar-show", "data-bs-toggle": "tooltip",  "data-bs-placement": "top", title: @planet.owner.name  %>
           </div>
-          <div class="description">
+          <div class="description w-100">
             <p><%= @planet.description %></p>
           </div>
         </div>
-        <div class="col-4 text-center">
-          <h1>Book this planet</h1>
-          <%= simple_form_for [@planet, @booking] do |f| %>
-            <%= f.input :arrival_date, label:"Arrival date in millenia", placeholder:"3" %>
-            <%= f.input :departure_date, label:"Departure date in millenia", placeholder:"4" %>
-            <%= f.submit "Book this planet", class: "btn btn-primary" %>
-          <% end %>
-        </div>
+        <% unless @planet.owner == current_user %>
+          <div class="col-4 text-center">
+            <h1>Book this planet</h1>
+            <%= simple_form_for [@planet, @booking] do |f| %>
+              <%= f.input :arrival_date, label:"Arrival date in millenia", placeholder:"3" %>
+              <%= f.input :departure_date, label:"Departure date in millenia", placeholder:"4" %>
+              <%= f.submit "Book this planet", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
